@@ -4,10 +4,35 @@ import 'package:islami_c13_monday/home/tabs/quran_tab/sura_name_horizontal_item.
 import 'package:islami_c13_monday/home/tabs/quran_tab/sura_name_item.dart';
 import 'package:islami_c13_monday/models/sura_model.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   QuranTab({super.key});
 
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
   var searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    searchController.addListener(onSearch);
+  }
+
+  onSearch() {
+    SuraModel.searchResult.clear();
+    String text = searchController.text;
+    if (text.isNotEmpty) {
+      for (String data in SuraModel.suraNamesEn) {
+        if (data.toLowerCase().contains(text.toLowerCase())) {
+          SuraModel.searchResult.add(data);
+        }
+      }
+    }
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +43,9 @@ class QuranTab extends StatelessWidget {
         children: [
           Image.asset("assets/images/onboarding_header.png"),
           _searchItem(),
-          _suraHorizontalList(),
+          SuraModel.searchResult.isNotEmpty || searchController.text.isNotEmpty
+              ? SizedBox()
+              : _suraHorizontalList(),
           _suraVerticalList(),
         ],
       ),
@@ -51,9 +78,14 @@ class QuranTab extends StatelessWidget {
               ),
               padding: EdgeInsets.zero,
               itemBuilder: (context, index) {
-                return SuraNameItem(model: SuraModel.getSuraModel(index));
+                return SuraNameItem(
+                    model: SuraModel.searchResult.isNotEmpty
+                        ? SuraModel.getSelectedSuraModel(index)
+                        : SuraModel.getSuraModel(index));
               },
-              itemCount: SuraModel.listLength,
+              itemCount: SuraModel.searchResult.isNotEmpty
+                  ? SuraModel.searchResult.length
+                  : SuraModel.listLength,
             ),
           )
         ],
@@ -63,6 +95,7 @@ class QuranTab extends StatelessWidget {
 
   Widget _suraHorizontalList() {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "Most Recently ",

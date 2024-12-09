@@ -17,10 +17,21 @@ class SuraModel {
     return SuraModel(
       nameAr: suraNamesAr[index],
       nameEn: suraNamesEn[index],
-      index: index+1,
+      index: index + 1,
       numOfVerses: suraVerseCounts[index],
     );
   }
+
+  static SuraModel getSelectedSuraModel(int index) {
+    return SuraModel(
+      nameAr: searchResult[index],
+      nameEn: searchResult[index],
+      index: index + 1,
+      numOfVerses: suraVerseCounts[index],
+    );
+  }
+
+  static List<String> searchResult = [];
 
   static List<int> suraVerseCounts = [
     7,
