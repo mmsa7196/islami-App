@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c13_monday/home/tabs/ahadeth_tab.dart';
-import 'package:islami_c13_monday/home/tabs/quran_tab.dart';
+import 'package:islami_c13_monday/home/tabs/quran_tab/quran_tab.dart';
 import 'package:islami_c13_monday/home/tabs/radio_tab.dart';
 import 'package:islami_c13_monday/home/tabs/sebha_tab.dart';
 import 'package:islami_c13_monday/home/tabs/time_tab.dart';
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> tabs = [
-    const QuranTab(),
+     QuranTab(),
     const AhadethTab(),
     const SebhaTab(),
     const RadioTab(),
