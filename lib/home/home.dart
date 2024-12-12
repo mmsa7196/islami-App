@@ -27,19 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
             fit: BoxFit.cover),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedIndex,
             onTap: (value) {
               selectedIndex = value;
               setState(() {});
             },
-            backgroundColor: const Color(0xFFE2BE7F),
-            showUnselectedLabels: false,
-            showSelectedLabels: true,
-            unselectedItemColor: const Color(0xFF202020),
-            selectedItemColor: Colors.white,
-            type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
                   icon: _buildNavItem(0, "quran"), label: "Quran"),
@@ -58,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> tabs = [
-     QuranTab(),
+    QuranTab(),
     const AhadethTab(),
     const SebhaTab(),
     const RadioTab(),

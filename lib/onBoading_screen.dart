@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami_c13_monday/cache_helper/cache_helper.dart';
 import 'package:islami_c13_monday/home/home.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -14,18 +15,9 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var bodyStyle = GoogleFonts.elMessiri(
-      fontSize: 19.0,
-      color: const Color(0xFFE2BE7F),
-    );
-
     var pageDecoration = PageDecoration(
-      titleTextStyle: GoogleFonts.elMessiri(
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
-        color: const Color(0xFFE2BE7F),
-      ),
-      bodyTextStyle: bodyStyle,
+      titleTextStyle: Theme.of(context).textTheme.titleLarge!,
+      bodyTextStyle: Theme.of(context).textTheme.headlineSmall!,
       imageFlex: 3,
       bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       pageColor: const Color(0xFF202020),
@@ -43,27 +35,19 @@ class OnBoardingScreen extends StatelessWidget {
       showBackButton: true,
       back: Text(
         "Back",
-        style: GoogleFonts.elMessiri(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: const Color(0xFFE2BE7F)),
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
       next: Text(
         "Next",
-        style: GoogleFonts.elMessiri(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: const Color(0xFFE2BE7F)),
+        style: Theme.of(context).textTheme.headlineMedium,
       ),
       done: Text(
         "Finish",
-        style: GoogleFonts.elMessiri(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: const Color(0xFFE2BE7F)),
+        style: Theme.of(context).textTheme.headlineMedium,
       ),
       showDoneButton: true,
       onDone: () {
+        CacheHelper.saveEligibility();
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       },
       pages: [

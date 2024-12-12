@@ -19,20 +19,13 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   Widget build(BuildContext context) {
     var suraModel = ModalRoute.of(context)?.settings.arguments as SuraModel;
     if (verses.isEmpty) {
-      loadSuraFile(suraModel.index + 1);
+      loadSuraFile(suraModel.index);
     }
     return Scaffold(
       backgroundColor: const Color(0xFF202020),
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: const Color(0xFF202020),
-        iconTheme: const IconThemeData(color: Color(0xFFE2BE7F)),
         title: Text(
           suraModel.nameEn,
-          style: GoogleFonts.aBeeZee(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-              color: const Color(0xFFE2BE7F)),
         ),
       ),
       body: Stack(
@@ -51,10 +44,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   margin: const EdgeInsets.only(top: 16),
                   child: Text(
                     suraModel.nameAr,
-                    style: GoogleFonts.aBeeZee(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        color: const Color(0xFFE2BE7F)),
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ),
                 const SizedBox(
@@ -78,21 +68,14 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                             TextSpan(
                               children: [
                                 TextSpan(
-                                  text: verses[index],
-                                  style: GoogleFonts.aBeeZee(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25,
-                                    color: const Color(0xFFE2BE7F),
-                                  ),
-                                ),
+                                    text: verses[index],
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium),
                                 TextSpan(
-                                  text: "(${index + 1})",
-                                  style: GoogleFonts.elMessiri(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                    color: const Color(0xFFE2BE7F),
-                                  ),
-                                ),
+                                    text: "(${index + 1})",
+                                    style:
+                                        Theme.of(context).textTheme.titleSmall),
                               ],
                             ),
                           ),
