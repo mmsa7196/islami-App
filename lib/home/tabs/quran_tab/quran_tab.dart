@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_c13_monday/home/tabs/quran_tab/sura_name_horizontal_item.dart';
 import 'package:islami_c13_monday/home/tabs/quran_tab/sura_name_item.dart';
 import 'package:islami_c13_monday/models/sura_model.dart';
+import 'package:islami_c13_monday/sura_details/sura_details_screen.dart';
 
 class QuranTab extends StatefulWidget {
   QuranTab({super.key});
@@ -78,10 +79,16 @@ class _QuranTabState extends State<QuranTab> {
               ),
               padding: EdgeInsets.zero,
               itemBuilder: (context, index) {
-                return SuraNameItem(
-                    model: SuraModel.searchResult.isNotEmpty
-                        ? SuraModel.getSelectedSuraModel(index)
-                        : SuraModel.getSuraModel(index));
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, SuraDetailsScreen.routeName,
+                        arguments: SuraModel.getSuraModel(index));
+                  },
+                  child: SuraNameItem(
+                      model: SuraModel.searchResult.isNotEmpty
+                          ? SuraModel.getSelectedSuraModel(index)
+                          : SuraModel.getSuraModel(index)),
+                );
               },
               itemCount: SuraModel.searchResult.isNotEmpty
                   ? SuraModel.searchResult.length
