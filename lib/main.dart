@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_c13_monday/cache_helper/cache_helper.dart';
+import 'package:islami_c13_monday/hadeth_details/hadeth_details.dart';
 import 'package:islami_c13_monday/home/home.dart';
 import 'package:islami_c13_monday/my_theme_data.dart';
 import 'package:islami_c13_monday/onBoading_screen.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
       },
     );
