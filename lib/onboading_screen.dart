@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_c13_monday/cache_helper/cache_helper.dart';
 import 'package:islami_c13_monday/home/home.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnboardingScreen extends StatelessWidget {
   static const String routeName = "/";
 
-  const OnBoardingScreen({super.key});
+  const OnboardingScreen({super.key});
 
   Widget _buildImage(String assetName, [double width = 350]) {
     return Image.asset('assets/images/$assetName', width: width);
@@ -52,7 +51,7 @@ class OnBoardingScreen extends StatelessWidget {
       },
       pages: [
         PageViewModel(
-          title: "Welcome To Islmi App",
+          title: "Welcome To Islami App",
           body: "",
           image: _buildImage('onboarding1.png'),
           decoration: pageDecoration,

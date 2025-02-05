@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyThemeData {
+abstract class MyThemeData {
   static const Color primaryColor = Color(0xFFE2BE7F);
   static const Color blackColor = Color(0xFF202020);
+  static const Color white = Color(0xFFFFFFFF);
   static ThemeData lightTheme = ThemeData(
     primaryColor: primaryColor,
     scaffoldBackgroundColor: Colors.transparent,
@@ -23,7 +24,7 @@ class MyThemeData {
       titleSmall: GoogleFonts.aBeeZee(
         fontWeight: FontWeight.bold,
         fontSize: 18,
-        color: primaryColor,
+        color: Colors.white,
       ),
       titleMedium: GoogleFonts.aBeeZee(
         fontWeight: FontWeight.bold,
