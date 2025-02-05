@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'quran_tab/radio_item.dart';
 
-
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
 
@@ -21,8 +20,8 @@ class RadioTab extends StatelessWidget {
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
-              unselectedLabelStyle: const TextStyle(
-                  color: Colors.white, fontSize: 16),
+              unselectedLabelStyle:
+                  const TextStyle(color: Colors.white, fontSize: 16),
               indicatorSize: TabBarIndicatorSize.tab,
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
