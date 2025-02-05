@@ -22,7 +22,7 @@ class RadioTab extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
               unselectedLabelStyle: const TextStyle(
-                  color: Color.fromRGBO(255, 255, 255, 1), fontSize: 16),
+                  color: Colors.white, fontSize: 16),
               indicatorSize: TabBarIndicatorSize.tab,
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
@@ -31,7 +31,7 @@ class RadioTab extends StatelessWidget {
               dividerHeight: 0,
               tabs: const [
                 Tab(
-                  text: "radio",
+                  text: "Radio",
                 ),
                 Tab(
                   text: "Reciters",
