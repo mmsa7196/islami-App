@@ -112,7 +112,7 @@ class _SebhaScreenTabState extends State<SebhaScreenTab> {
     counter++;
     turns = turns + (pi / 33);
     if (counter == 34) {
-      Azkar = azkar[(azkar.indexOf(Azkar) + 1) % 3];
+      Azkar = azkar[(azkar.indexOf(Azkar) + 1) % 5];
       counter = 0;
     }
     setState(() {});
