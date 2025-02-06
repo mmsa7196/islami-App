@@ -19,10 +19,10 @@ class _RadioitemState extends State<Radioitem> {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 16),
-        padding: EdgeInsets.symmetric(vertical: 16),
+        margin: const EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: Color(0xffE2BE7F),
+          color: const Color(0xffE2BE7F),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Stack(
@@ -44,12 +44,12 @@ class _RadioitemState extends State<Radioitem> {
               child: Image.asset(
                 "assets/images/soundWave 1.png",
                 fit: BoxFit.fitWidth,
-                color: Color(0xff20202033),
+                color: const Color(0xff20202033),
               ),
             ),
             Column(
               children: [
-                Text(
+                const Text(
                   "Radio Ibrahim Al-Akdar",
                   style: TextStyle(
                     color: Color(0xff202020),
@@ -57,7 +57,7 @@ class _RadioitemState extends State<Radioitem> {
                     fontSize: 20,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -69,11 +69,11 @@ class _RadioitemState extends State<Radioitem> {
                         setState(() {});
                       },
                       icon: isfav
-                          ? Icon(Icons.favorite,
+                          ? const Icon(Icons.favorite,
                           size: 30, color: Color(0xff202020))
-                          : Icon(Icons.favorite_border),
+                          : const Icon(Icons.favorite_border),
                       iconSize: 30,
-                      color: Color(0xff202020),
+                      color: const Color(0xff202020),
                     ),
                     IconButton(
                       onPressed: () {
@@ -81,12 +81,12 @@ class _RadioitemState extends State<Radioitem> {
                         setState(() {});
                       },
                       icon: isplay
-                          ? Icon(
+                          ? const Icon(
                         Icons.play_arrow,
                         size: 30,
                         color: Color(0xff202020),
                       )
-                          : Icon(
+                          : const Icon(
                         Icons.pause,
                         size: 30,
                         color: Color(0xff202020),
@@ -98,12 +98,12 @@ class _RadioitemState extends State<Radioitem> {
                         setState(() {});
                       },
                       icon: isvol
-                          ? Icon(
+                          ? const Icon(
                         Icons.volume_up,
                         size: 30,
                         color: Color(0xff202020),
                       )
-                          : Icon(
+                          : const Icon(
                         Icons.volume_off,
                         size: 30,
                         color: Color(0xff202020),
